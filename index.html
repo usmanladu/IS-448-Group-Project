@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>UMBC Diet Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/DT_style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/DTbehavior.js"></script>
+</head>
+
+<body>    
+    <!-- The overlays for the favorites that will launch the respective app when clicked -->
+    <div id="DietTrackerNav" class="overlay">
+
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav('DietTrackerNav')">&times;</a>
+
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <img src="res/diet_tracker_chicklet.png" alt="Diet Tracker"/>
+        <h1>Diet Tracker</h1>
+        <form action="" onsubmit="" id="dietTrackerForm" method="post">
+          <table class="app-table">
+            <tr>
+              <td>Search Food Details: <input class="form-control" type="text" name="food-search" id="foodSearch"/></td>
+              <td>Calories: <input class="form-control" type="text" name="calor" id="calor"/></td>
+            </tr>
+          </table>
+
+          <ul class="list-group" id="foodSearchResults"></ul>
+
+           <p>
+            Physical Activities: <input class="form-control" type="text" name="title" size="100%" maxlength="25"/>
+          </p>
+
+          <!--A submit button and a reset button. The submit button submits all the input data.
+          The reset button clears all text fields and initializes everything back to the default state.-->
+          <p class="submission-area">
+            <input class="round_button" type="submit" value="Submit"/>
+            <input class="round_button" type="reset" value="Reset"/>       
+          </p>
+        </form> 
+      </div>
+
+    </div>
+    
+    <div id="BMRCalcNav" class="overlay">
+
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav('BMRCalcNav')">&times;</a>
+
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <img src="res/bmr_calculator_icon2.png" alt="BMR Calc"/>
+        <h1>BMR Calculator</h1>
+      </div>
+
+    </div>
+
+    <div id="FoodPlanNav" class="overlay">
+
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav('FoodPlanNav')">&times;</a>
+
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <img src="res/food_plan_icon.png" alt="Food Plan"/>
+        <h1>Food Plan</h1>
+      </div>
+
+    </div>
+
+    <div id="MapsNav" class="overlay">
+
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav('MapsNav')">&times;</a>
+
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <!-- <img src="res/maps_icon.png" alt="maps"/> -->
+        <h1>Maps</h1>        
+
+         <object width="100%" height="800px">
+            <param name="movie" value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3815.0459394830386!2d-76.71316378435398!3d39.25561703335346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c81db59abc4bcb%3A0x7119b4daadb403d!2sUniversity+of+Maryland+-+Baltimore+County!5e1!3m2!1sen!2sus!4v1525710721890"></param>
+            <param name="allowFullScreen" value="true"></param>
+         </object>
+      </div>
+
+    </div>
+
+    <div id="BMICalcNav" class="overlay">
+
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav('BMICalcNav')">&times;</a>
+
+      <!-- Overlay content -->
+      <div class="overlay-content">       
+        <img src="res/bmi_calculator_icon.png" alt="BMI Calc"/>
+        <h1>BMI Calculator</h1>
+        <form action="" onsubmit="" id="bmiForm" method="post">
+         <!--  <p>
+            Weight: <input type="text" name="title" size="50%" maxlength="25"/>
+          </p> -->
+
+          <table class="app-table">
+            <tr>  
+              <th>Height:</th>
+            </tr>
+            <tr>
+              <td>Feet: <input type="text" name="height-feet" size="50%" maxlength="2"/></td>
+              <td>Inches: <input type="text" name="height-inches" size="50%" maxlength="2"/></td>
+            </tr>
+
+            <tr>
+              <th>Weight:</th>
+            </tr>
+            <tr>
+              <td>Pounds: <input type="text" name="title" size="50%" maxlength="3"/></td>
+            </tr>
+          </table>
+          
+          <!--A submit button and a reset button. The submit button submits all the input data.
+          The reset button clears all text fields and initializes everything back to the default state.-->
+          <p class="submission-area">
+            <input class="round_button" type="button" value="Calculate"/>
+            <input class="round_button" type="reset" value="Reset"/>       
+          </p>
+        </form> 
+      </div>
+
+    </div>
+
+    <div id="AddFavNav" class="overlay">
+
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav('AddFavNav')">&times;</a>
+
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <!-- content here -->
+      </div>
+
+    </div>
+
+    <!--This page will describe who I am and Student role at UMBC -->
+    <div class="container">
+        <div class="header">
+            <p><img src="res/diettrackerbanner.png" width="100%" height="225" alt="banner" /></p>
+        </div>
+
+        <div id="nav">
+            <ul>
+                <li><a class="active" href="index.html" title="homepage">Home</a></li>
+                <li><a href="DTlogin.html" title="login page">Sign In/Join</a></li>
+                <li><a href="DTcontactus.html" title="contact us page">Contact Us</a></li>
+                <li><a href="DTaboutus.html" title="About us page">About Us</a></li>
+                <li class="float-right"><input class="search" type="text" name="search" /></li>
+            </ul>
+        </div>      
+
+        <div class="favorites">
+            <h1>Applications</h1>
+
+            <div class="scrollable">
+                <table>
+                    <tr>
+                        <td class="favorite-item">
+                            <img src="res/diet_tracker_chicklet.png" onclick="openNav('DietTrackerNav')" alt="Diet Tracker"/>
+                            <span class="caption">Diet Tracker</span>
+                        </td>
+
+                        <td class="favorite-item">
+                            <img src="res/bmr_calculator_icon2.png" onclick="openNav('BMRCalcNav')"  alt="BMR Calc"/>
+                            <span class="caption" >BMR Calculator</span>
+                        </td>
+
+                        <td class="favorite-item">
+                            <img src="res/food_plan_icon.png" onclick="openNav('FoodPlanNav')" alt="Food Plan"/>
+                            <span class="caption">Food Plan</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="favorite-item">
+                            <img src="res/bmi_calculator_icon.png" onclick="openNav('BMICalcNav')" alt="BMI Calc"/>
+                            <span class="caption">BMI Calculator</span>
+                        </td>
+
+                        <td class="favorite-item">
+                            <img src="res/maps_icon.png" onclick="openNav('MapsNav')" alt="maps"/>
+                            <span class="caption">Maps</span>
+                        </td>
+
+                        <td class="favorite-item">
+                            
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="video-main">
+            <object width="100%" height="315px">
+                <param name="movie" value="https://www.youtube.com/embed/-mW55jAeBOE?autoplay=0"></param>
+                <param name="allowFullScreen" value="true"></param>
+             </object>
+        </div>
+
+        <div class="footer">Copyright &copy;&nbsp;AlphaTech.com
+            <div class="toolbar2">
+                <p>
+                    <a href="index.html" title="homepage">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                    <a href="DTtermsofuse.html" title="terms of use">Terms of Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                    <a href ="DTaboutus.html" title ="About us">About Us</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="DTcontactus.html" title="contact us page">Contact Us</a>
+                </p>
+                
+                <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com">
+                    <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                </a>
+                <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons">
+                    <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                </a>
+                <a href="https://plus.google.com/share?url=https://simplesharebuttons.com">
+                    <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
